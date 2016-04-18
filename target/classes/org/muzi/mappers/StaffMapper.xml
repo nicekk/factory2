@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.muzi.dao.StaffMapper">
+
+	<select id="selectByUsername" resultType="org.muzi.model.Staff"  parameterType="string">
+		select * from t_staff where username=#{username}
+	</select>
+
+	<select id="selectAll" resultType="org.muzi.model.Staff">
+		select * from t_staff
+	</select>
+	
+	<insert id="insert" parameterType="org.muzi.model.Staff">
+		insert into t_staff (name,sex,age,telephone,address,job,jobQuotiety,status,bankcardNo,gmtOnJob,jobAge,username,password)
+		VALUES(#{name},#{sex},#{age},#{telephone},#{address},#{job},#{jobQuotiety},#{status},#{bankcardNo},#{gmtOnJob},#{jobAge},#{username},#{password})
+	</insert>
+</mapper> 
